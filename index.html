@@ -6,32 +6,42 @@
   <title>ЛюмиСВЕТ — светящиеся материалы нового поколения</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="lum-particles" aria-hidden="true"></div>
+  <header class="header" id="header">
     <div class="container header__inner">
-      <a href="#" class="logo">Люми<span>СВЕТ</span></a>
-      <nav class="nav" aria-label="Основная навигация">
+      <a href="#" class="logo">
+        <img src="images/logo.png" alt="ЛюмиСВЕТ" class="logo__img" width="140" height="140">
+      </a>
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Открыть меню">
+        <span></span><span></span>
+      </button>
+      <nav class="nav" id="navMenu" aria-label="Основная навигация">
         <a href="#daynight">День / Ночь</a>
         <a href="#products">Продукция</a>
         <a href="#apply">Применение</a>
         <a href="#order">Заказ</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a href="#cta" class="btn btn--small btn--primary">Консультация</a>
+      <a href="#cta" class="btn btn--small btn--primary header__cta">Консультация</a>
     </div>
   </header>
 
   <main>
     <!-- 1. HERO -->
     <section class="hero" id="hero">
+      <div class="hero__mesh" aria-hidden="true"></div>
       <div class="hero__glow hero__glow--green" aria-hidden="true"></div>
+      <div class="hero__glow hero__glow--cyan" aria-hidden="true"></div>
       <div class="hero__glow hero__glow--blue" aria-hidden="true"></div>
-      <div class="container hero__content">
-        <p class="eyebrow">Люминесцентные материалы</p>
-        <h1 class="hero__title">Светящиеся материалы нового поколения</h1>
+      <div class="container hero__layout">
+        <div class="hero__content reveal">
+        <p class="eyebrow"><span class="eyebrow__line" aria-hidden="true"></span>Люминесцентные материалы</p>
+        <h1 class="hero__title">Светящиеся материалы <em>нового поколения</em></h1>
         <p class="hero__subtitle">
           Люминесцентный камень и гранула для ландшафта, резиновых покрытий,
           тротуарной плитки и декоративных решений.
@@ -48,12 +58,20 @@
             <span class="glow-dot glow-dot--blue" aria-hidden="true"></span> Blue Glow
           </li>
         </ul>
+        </div>
+        <div class="hero__logo reveal reveal--delay">
+          <div class="hero__logo-halo hero__logo-halo--cyan" aria-hidden="true"></div>
+          <div class="hero__logo-halo hero__logo-halo--green" aria-hidden="true"></div>
+          <div class="hero__logo-ring" aria-hidden="true"></div>
+          <img src="images/logo.png" alt="ЛюмиСветик — люминесцентные материалы" class="hero__logo-img" width="520" height="520">
+        </div>
       </div>
     </section>
 
     <!-- 2. ДЕНЬ / НОЧЬ -->
     <section class="daynight section" id="daynight">
       <div class="container">
+        <p class="section__kicker">День и ночь</p>
         <h2 class="section__title">Материал, который меняет пространство вечером</h2>
         <p class="section__lead daynight__lead">
           Днём — декоративный материал.<br>
@@ -69,7 +87,9 @@
             <div class="compare__mock-path compare__mock-path--glow"></div>
             <div class="compare__mock-stones compare__mock-stones--glow"></div>
           </div>
-          <div class="compare__divider" id="compareDivider" aria-hidden="true"></div>
+          <div class="compare__divider" id="compareDivider" aria-hidden="true">
+            <span class="compare__handle"></span>
+          </div>
           <input
             type="range"
             class="compare__slider"
@@ -269,7 +289,9 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <a href="#" class="logo">Люми<span>СВЕТ</span></a>
+      <a href="#" class="logo">
+        <img src="images/logo.png" alt="ЛюмиСВЕТ" class="logo__img" width="140" height="140">
+      </a>
       <p class="footer__copy">© 2026 ЛюмиСВЕТ. Светящиеся материалы.</p>
     </div>
   </footer>
@@ -286,6 +308,42 @@
       }
       slider.addEventListener('input', update);
       update();
+
+      var header = document.getElementById('header');
+      window.addEventListener('scroll', function () {
+        header.classList.toggle('header--scrolled', window.scrollY > 24);
+      }, { passive: true });
+
+      var navToggle = document.getElementById('navToggle');
+      var navMenu = document.getElementById('navMenu');
+      if (navToggle && navMenu) {
+        navToggle.addEventListener('click', function () {
+          var open = navMenu.classList.toggle('nav--open');
+          navToggle.setAttribute('aria-expanded', open);
+          navToggle.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+        });
+        navMenu.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+            navMenu.classList.remove('nav--open');
+            navToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+              obs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+        document.querySelectorAll('.section__title, .product-card, .apply-card, .russia-card, .step, .pricing-card, .faq__item, .swatch').forEach(function (el) {
+          el.classList.add('reveal-on-scroll');
+          obs.observe(el);
+        });
+      }
     })();
   </script>
 </body>
