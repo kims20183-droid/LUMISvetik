@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЛюмиСВЕТ — светящиеся материалы нового поколения</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">Люми<span>СВЕТ</span></a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#daynight">День / Ночь</a>
+        <a href="#products">Продукция</a>
+        <a href="#apply">Применение</a>
+        <a href="#order">Заказ</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="#cta" class="btn btn--small btn--primary">Консультация</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. HERO -->
+    <section class="hero" id="hero">
+      <div class="hero__glow hero__glow--green" aria-hidden="true"></div>
+      <div class="hero__glow hero__glow--blue" aria-hidden="true"></div>
+      <div class="container hero__content">
+        <p class="eyebrow">Люминесцентные материалы</p>
+        <h1 class="hero__title">Светящиеся материалы нового поколения</h1>
+        <p class="hero__subtitle">
+          Люминесцентный камень и гранула для ландшафта, резиновых покрытий,
+          тротуарной плитки и декоративных решений.
+        </p>
+        <div class="hero__actions">
+          <a href="#pricing" class="btn btn--primary">Получить каталог</a>
+          <a href="#cta" class="btn btn--outline">Запросить тестовую партию</a>
+        </div>
+        <ul class="trust-bar">
+          <li><span class="trust-bar__icon" aria-hidden="true">🇷🇺</span> Российское производство</li>
+          <li><span class="trust-bar__icon" aria-hidden="true">📄</span> Сертификаты</li>
+          <li>
+            <span class="glow-dot glow-dot--green" aria-hidden="true"></span> Green Glow
+            <span class="glow-dot glow-dot--blue" aria-hidden="true"></span> Blue Glow
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 2. ДЕНЬ / НОЧЬ -->
+    <section class="daynight section" id="daynight">
+      <div class="container">
+        <h2 class="section__title">Материал, который меняет пространство вечером</h2>
+        <p class="section__lead daynight__lead">
+          Днём — декоративный материал.<br>
+          Вечером — мягкое свечение и совершенно другое восприятие пространства.
+        </p>
+
+        <div class="compare" id="compare">
+          <div class="compare__scene compare__scene--day" aria-hidden="true">
+            <div class="compare__mock-path"></div>
+            <div class="compare__mock-stones"></div>
+          </div>
+          <div class="compare__scene compare__scene--night" aria-hidden="true">
+            <div class="compare__mock-path compare__mock-path--glow"></div>
+            <div class="compare__mock-stones compare__mock-stones--glow"></div>
+          </div>
+          <div class="compare__divider" id="compareDivider" aria-hidden="true"></div>
+          <input
+            type="range"
+            class="compare__slider"
+            id="compareSlider"
+            min="0"
+            max="100"
+            value="50"
+            aria-label="Сравнение: день и ночь"
+          >
+        </div>
+
+        <div class="compare__labels">
+          <span>День</span>
+          <span>← →</span>
+          <span>Ночь</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. КАТЕГОРИИ -->
+    <section class="products section" id="products">
+      <div class="container">
+        <h2 class="section__title">Три направления материала</h2>
+        <div class="products__grid">
+          <article class="product-card">
+            <span class="product-card__icon" aria-hidden="true">🌿</span>
+            <h3>Ландшафтный камень</h3>
+          </article>
+          <article class="product-card">
+            <span class="product-card__icon" aria-hidden="true">🛝</span>
+            <h3>Гранула для резиновых покрытий</h3>
+          </article>
+          <article class="product-card">
+            <span class="product-card__icon" aria-hidden="true">🧱</span>
+            <h3>Светящийся камень для плитки и бетона</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ГДЕ ПРИМЕНЯЕТСЯ -->
+    <section class="apply section" id="apply">
+      <div class="container">
+        <h2 class="section__title">Где используется материал</h2>
+        <div class="apply__grid">
+          <article class="apply-card">дорожки</article>
+          <article class="apply-card">ландшафт</article>
+          <article class="apply-card">резиновые покрытия</article>
+          <article class="apply-card">тротуарная плитка</article>
+          <article class="apply-card">архитектурный бетон</article>
+          <article class="apply-card">общественные пространства</article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. ДЛЯ КОГО -->
+    <section class="audience section" id="audience">
+      <div class="container">
+        <h2 class="section__title">Кому подойдёт материал</h2>
+        <ul class="audience__list">
+          <li>Производителям покрытий</li>
+          <li>Производителям плитки</li>
+          <li>Ландшафтным дизайнерам</li>
+          <li>Архитекторам и застройщикам</li>
+          <li>Частным клиентам</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 6. ЦВЕТА И ФРАКЦИИ -->
+    <section class="colors section" id="colors">
+      <div class="container">
+        <h2 class="section__title">Варианты свечения и фракций</h2>
+        <div class="colors__swatches">
+          <div class="swatch swatch--green">
+            <span class="swatch__orb" aria-hidden="true"></span>
+            <span class="swatch__name">Green Glow</span>
+          </div>
+          <div class="swatch swatch--blue">
+            <span class="swatch__orb" aria-hidden="true"></span>
+            <span class="swatch__name">Blue Glow</span>
+          </div>
+        </div>
+        <p class="colors__text">
+          Материал доступен в разных размерах и форматах под разные типы покрытий и задач.
+        </p>
+      </div>
+    </section>
+
+    <!-- 7. РОССИЙСКАЯ РАЗРАБОТКА -->
+    <section class="russia section" id="russia">
+      <div class="container">
+        <h2 class="section__title">Российская разработка и собственное производство</h2>
+        <div class="russia__grid">
+          <article class="russia-card">
+            <div class="russia-card__visual russia-card__visual--cert" aria-hidden="true"></div>
+            <h3>Сертификаты</h3>
+            <p>Документация и соответствие требованиям для B2B-поставок</p>
+          </article>
+          <article class="russia-card">
+            <div class="russia-card__visual russia-card__visual--factory" aria-hidden="true"></div>
+            <h3>Производство</h3>
+            <p>Собственная линия и контроль качества на каждом этапе</p>
+          </article>
+          <article class="russia-card">
+            <div class="russia-card__visual russia-card__visual--test" aria-hidden="true"></div>
+            <h3>Тесты</h3>
+            <p>Проверка свечения, фракции и стойкости в реальных условиях</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. КАК ПРОХОДИТ РАБОТА -->
+    <section class="steps section" id="order">
+      <div class="container">
+        <h2 class="section__title">Как сделать заказ</h2>
+        <ol class="steps__list">
+          <li class="step">
+            <span class="step__num">1</span>
+            <p>Оставляете заявку</p>
+          </li>
+          <li class="step">
+            <span class="step__num">2</span>
+            <p>Подбираем материал</p>
+          </li>
+          <li class="step">
+            <span class="step__num">3</span>
+            <p>Отправляем тестовую или промышленную партию</p>
+          </li>
+          <li class="step">
+            <span class="step__num">4</span>
+            <p>Консультируем по применению</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 9. СТОИМОСТЬ -->
+    <section class="pricing section" id="pricing">
+      <div class="container">
+        <h2 class="section__title">Формат поставки</h2>
+        <div class="pricing__cards">
+          <article class="pricing-card">
+            <h3>Тестовые партии</h3>
+            <p>Для оценки свечения и подбора фракции на вашем объекте</p>
+          </article>
+          <article class="pricing-card pricing-card--featured">
+            <h3>Промышленные партии</h3>
+            <p>Для серийного производства покрытий и крупных проектов</p>
+          </article>
+        </div>
+        <a href="#cta" class="btn btn--primary btn--center">Запросить прайс</a>
+      </div>
+    </section>
+
+    <!-- 10. FAQ -->
+    <section class="faq section" id="faq">
+      <div class="container container--narrow">
+        <h2 class="section__title">Частые вопросы</h2>
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary>Нужен ли отдельный источник света?</summary>
+            <p>Нет. Материал накапливает свет днём и светится в темноте самостоятельно.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Как долго держится свечение?</summary>
+            <p>Зависит от освещённости днём; вечером — мягкое свечение несколько часов.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Можно ли использовать на улице?</summary>
+            <p>Да, материал рассчитан на ландшафт, плитку и резиновые покрытия.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Есть ли тестовая партия?</summary>
+            <p>Да, отправляем тестовый объём для проверки на вашем объекте.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Какие цвета доступны?</summary>
+            <p>Green Glow и Blue Glow — под разные задачи и дизайн.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. ФИНАЛЬНЫЙ CTA -->
+    <section class="cta section" id="cta">
+      <div class="container cta__inner">
+        <h2 class="cta__title">Посмотрите, как может выглядеть ваш проект вечером</h2>
+        <div class="cta__actions">
+          <a href="#" class="btn btn--primary">Получить консультацию</a>
+          <a href="#" class="btn btn--outline">Запросить тестовую партию</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#" class="logo">Люми<span>СВЕТ</span></a>
+      <p class="footer__copy">© 2026 ЛюмиСВЕТ. Светящиеся материалы.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var slider = document.getElementById('compareSlider');
+      var divider = document.getElementById('compareDivider');
+      var compare = document.getElementById('compare');
+      function update() {
+        var v = slider.value;
+        compare.style.setProperty('--pos', v + '%');
+        divider.style.left = v + '%';
+      }
+      slider.addEventListener('input', update);
+      update();
+    })();
+  </script>
+</body>
+</html>
