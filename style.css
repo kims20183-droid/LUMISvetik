@@ -105,6 +105,22 @@ body::before {
   opacity: 0.85;
 }
 
+.splash-cursor-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  mix-blend-mode: lighten;
+  opacity: 0.6;
+}
+
+#splashCursor {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  pointer-events: none;
+}
+
 @keyframes particles-drift {
   from {
     transform: translateY(0);
@@ -537,6 +553,25 @@ main {
   letter-spacing: -0.04em;
   margin-bottom: 1.35rem;
   text-shadow: var(--glow-text);
+}
+
+.hero__type-wrap {
+  display: block;
+  max-width: 24ch;
+  min-height: 1.35em;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.hero__type-cursor {
+  margin-left: 0.2rem;
+  display: inline-block;
+  color: var(--cyan-bright);
+  text-shadow: 0 0 12px var(--cyan-dim);
+}
+
+.hero__type-cursor--hidden {
+  opacity: 0;
 }
 
 .hero__subtitle {
@@ -991,10 +1026,15 @@ main {
 }
 
 .russia-card__visual--test {
-  background:
-    radial-gradient(circle at 50% 80%, var(--green-dim), transparent 55%),
-    radial-gradient(circle at 30% 40%, var(--cyan-dim), transparent 50%),
-    linear-gradient(180deg, #0f1824, #060b14);
+  background: var(--bg-card);
+}
+
+.russia-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .russia-card h3 {
